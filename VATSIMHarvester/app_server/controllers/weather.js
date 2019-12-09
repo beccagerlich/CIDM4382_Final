@@ -5,27 +5,30 @@ const apiOptions = {
 };
 
 const Places = [
-  {
-    place: "Amarillo",
-    lattitude: 35.222,
-    longitude: -101.8313
-  },
-  {
-    place: "Canyon",
-    lattitude: 34.9803,
-    longitude: 101.9188
-  },
-  {
-    place: "Lubbock",
-    lattitude: 33.5779,
-    longitude: 101.8552
-  },
-  {
-    place: "Oklahoma City",
-    lattitude: 35.4676,
-    longitude: 97.5164
-  },
-
+  // {
+  //   place: "Amarillo",
+  //   lattitude: 35.222,
+  //   longitude: -101.8313
+  // },
+  // {
+  //   place: "Canyon",
+  //   lattitude: 34.9803,
+  //   longitude: 101.9188
+  // },
+  // {
+  //   place: "Lubbock",
+  //   lattitude: 33.5779,
+  //   longitude: 101.8552
+  // },
+  // {
+  //   place: "Oklahoma City",
+  //   lattitude: 35.4676,
+  //   longitude: 97.5164
+  // },
+    "Amarillo",
+    "Canyon",
+    "Lubbock",
+    "Oklahoma City",
   ];
 
 // Airports.forEach((airport) => {
