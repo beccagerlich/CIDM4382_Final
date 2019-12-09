@@ -13,7 +13,8 @@ const task = cron.schedule('* /2 * * * *', () => {
    axios.get('https://api.darksky.net/forecast/72b7a195bb6fcb4a8f01cfaf880d0fef/34.9803,101.9188')
     .then( (response) => {
 
-        
+        let _lat = response.data.latitude;
+        let _lon = response.data.longitude;
         let _time = response.data.currently.time;
         let _temp = response.data.currently.temperature;
         let _humid = response.data.currently.humidity;
