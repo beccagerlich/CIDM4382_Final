@@ -10,7 +10,7 @@ const Weather = mongoose.model('Weather');
 
 const task = cron.schedule('* /1 * * * *', () => {
 
-   axios.get('https://api.darksky.net/forecast/72b7a195bb6fcb4a8f01cfaf880d0fef/37.8267,-122.4233')
+   axios.get('https://api.darksky.net/forecast/72b7a195bb6fcb4a8f01cfaf880d0fef/34.9803,101.9188')
     .then( (response) => {
 
         let _time = response.data.currently.time;
