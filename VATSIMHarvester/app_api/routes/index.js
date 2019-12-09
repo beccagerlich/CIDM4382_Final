@@ -4,11 +4,11 @@ const ctrlWeather = require('../controllers/weather');
 
 router
 
-  .route('/temperature/:latlong/:howMany/:offset')
+  .route('/temperature/:place/:howMany/:offset')
   .get(ctrlWeather.temperature);
 
 router
-  .route('/windspeed/:latlong/:howMany/:offset')
+  .route('/windspeed/:place/:howMany/:offset')
   .get(ctrlWeather.windspeed);
 
 // router

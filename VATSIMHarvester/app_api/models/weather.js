@@ -7,6 +7,8 @@ const weatherSchema = new Schema({
 	humid: String,
 	wind: String,
 	visible: String,
+	lat: String,
+	lon: String
 });
 
 mongoose.model('Weather', weatherSchema);

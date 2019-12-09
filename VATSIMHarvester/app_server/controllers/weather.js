@@ -4,34 +4,10 @@ const apiOptions = {
   server: 'http://localhost:' + selected_Port //steel from 
 };
 
-const Airports = [
-    //BRAVO
-    "KPHX", //KPHX - Phoenix Sky Harbor Intl
-    //CHARLIE
-    "KABQ", //KABQ - Albuquerque Intl Sunport
-    "KAMA", //KAMA - Rick Husband Amarillo Intl
-    "KDMA", //KDMA - Davis Monthan AFB
-    "KELP", //KELP - El Paso Intl
-    "KTUS", //KTUS - Tucson Intl & U90 TRACON
-    //DELTA
-    "KAEG", //KAEG - Double Eagle II
-    "KBIF", //KBIF - Biggs AAF
-    "KCHD", //KCHD - Chandler Municipal
-    "KCVS", //KCVS - Cannon AFB
-    "KDVT", //KDVT - Phoenix Deer Valley
-    "KFFZ", //KFFZ - Falcon Field
-    "KFHU", //KFHU - Sierra Vista / Libby AAF
-    "KFLG", //KFLG - Flagstaff Pulliam
-    "KGEU", //KGEU - Glendale Municipal
-    "KGYR", //KGYR - Phoenix Goodyear
-    "KHMN", //KHMN - Holloman AFB
-    "KIWA", //KIWA - Phoenix-Mesa Gateway
-    "KLUF", //KLUF - Luke AFB
-    "KPRC", //KPRC - Ernest A Love Field
-    "KROW", //KROW - Roswell Intl Air Center
-    "KRYN", //KRYN - Ryan Field
-    "KSAF", //KSAF - Santa Fe Municipal
-    "KSDL"  //KSDL - Scottsdale
+const Places = [
+    "Amarillo",
+    "Canyon",
+    "Oklahoma City",
   ];
 
 // Airports.forEach((airport) => {
@@ -39,23 +15,23 @@ const Airports = [
 // })
 
 //this will be first selected airport - let coz it can change
-//let selectedAirport = "KPHX";
+//let selectedPlace = "KPHX";
 
-let selectedAirport = "KPHX";
+let selectedPlace = "Canyon";
 //post method
 const weatherSelection = (req, res) => {
   //this helps with the dropdown
     console.log(req.body);
-    selectedAirport = req.body.selectedAirport;
-    console.log(`Selected Airport: ${selectedAirport}`);
+    selectedPlace = req.body.selectedPlace;
+    console.log(`Selected Place: ${selectedPlace}`);
     weatherWind(req, res);
     weatherTemp(req, res);
 }
 
 const weatherWind = (req, res) => {
     // /arrived/:airport/:howMany/:offset
-    console.log(`Selected Airport: ${selectedAirport}`);
-    const path = `/api/windspeed/${selectedAirport}/15/0`;
+    console.log(`Selected Place: ${selectedPlace}`);
+    const path = `/api/windspeed/${selectedPlace}/15/0`;
     const requestOptions = {
       url: `${apiOptions.server}${path}`,
       method: 'GET',
@@ -74,8 +50,8 @@ const weatherWind = (req, res) => {
 };
 const weatherTemp = (req, res) => {
   // /arrived/:airport/:howMany/:offset
-  console.log(`Selected Airport: ${selectedAirport}`);
-  const path = `/api/temperature/${selectedAirport}/15/0`;
+  console.log(`Selected Place: ${selectedPlace}`);
+  const path = `/api/temperature/${selectedPlace}/15/0`;
   const requestOptions = {
     url: `${apiOptions.server}${path}`,
     method: 'GET',
@@ -100,15 +76,15 @@ const renderArrivalsPage = (req, res, responseBody) => {
       responseBody = [];
     } else {
       if (!responseBody.length) {
-        message = 'No results for this airport';
+        message = 'No results for this place';
       }
     }
     res.render('windspeeds', 
         {
-            airports: Airports,
+            places: Places,
             weathers: responseBody,
             message,
-            selectedAirport
+            selectedPlace
         }
     );
 };
@@ -120,15 +96,15 @@ const renderTempPage = (req, res, responseBody) => {
     responseBody = [];
   } else {
     if (!responseBody.length) {
-      message = 'No results for this airport';
+      message = 'No results for this place';
     }
   }
   res.render('temperatures', 
       {
-          airports: Airports,
+          places: Places,
           weathers: responseBody,
           message,
-          selectedAirport
+          selectedPlace
       }
   );
 };

@@ -8,12 +8,12 @@ block content
                 .col
                     h1.text-center Temperature
                     form(action='temperatures', method='POST')
-                        select(name='selectedAirport')
-                            each airport in airports
-                                option(value=airport) #{airport}
+                        select(name='selectedPlace')
+                            each place in places
+                                option(value=place) #{place}
                         input(type='submit', value='Submit')
                         //this #{} inserts variable directly into the page
-                    p #{selectedAirport}
+                    p #{selectedPlace}
                     p #{message}
 
                 .row

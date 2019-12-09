@@ -18,13 +18,17 @@ const task = cron.schedule('* * * * *', () => {
         let _humid = response.data.currently.humidity;
         let _wind = response.data.currently.windSpeed;
         let _visible = response.data.currently.visibility;
+        let _lat = response.data.latitude;
+        let _lon = response.data.longitude;
 
         var report = {
             time: _time,
             temp: _temp,
             humid: _humid,
             wind: _wind,
-            visible: _visible
+            visible: _visible,
+            lat: _lat,
+            lon: _lon
         }
 
         const uri = process.env.MONGODB_ATLAS_URL;
