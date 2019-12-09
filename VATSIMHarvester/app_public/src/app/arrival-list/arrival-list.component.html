@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>ZAB Arrivals</title>
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">ZAB Arrivals</h1>
+                <select (change)="changeAirport($event)">
+                    <option *ngFor="let airport of airports" value={{airport}}>
+                        {{airport}}
+                    </option>}
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="table-responsive">
+                    <table class="table table-sm table-hover">
+                        <thead>
+                            <tr>
+                                <th>Callsign</th>
+                                <th>Departure</th>
+                                <th>Arrival</th>
+                                <th>Logon Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let client of clients">
+                                <td>{{client.callsign}}</td>
+                                <td>{{client.planned_depairport}}</td>
+                                <td>{{client.planned_destairport}}</td>
+                                <td>{{client.time_logon | vatsimdate}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
