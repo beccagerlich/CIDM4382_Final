@@ -8,7 +8,7 @@ require('./app_api/models/weather');
 const Weather = mongoose.model('Weather');
 
 
-const task = cron.schedule('* /1 * * * *', () => {
+const task = cron.schedule('* /2 * * * *', () => {
 
    axios.get('https://api.darksky.net/forecast/72b7a195bb6fcb4a8f01cfaf880d0fef/34.9803,101.9188')
     .then( (response) => {
