@@ -49,6 +49,10 @@ const task = cron.schedule('* /2 * * * *', () => {
         scheduled: false
     }
 );
+//MAP
+// https://image.maps.api.here.com/mia/1.6/mapview?app_id={YOUR_APP_ID}&app_code={YOUR_APP_CODE}
+
+//TRAFFIC
 // const task2 = cron.schedule('* /2 * * * *', () => {
 
 //     axios.get('https://traffic.api.here.com/traffic/6.3/incidents/xml/8/134/86?app_id={ZF9ABGlCsYXVhvhMU5RH}&app_code={hdmllY-4vQcq9j_XYGhDxg}')
