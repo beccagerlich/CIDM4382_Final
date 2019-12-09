@@ -8,18 +8,18 @@ require('./app_api/models/weather');
 const Weather = mongoose.model('Weather');
 
 
-const task = cron.schedule('* /2 * * * *', () => {
+const task = cron.schedule('* * * * *', () => {
 
-   axios.get('https://api.darksky.net/forecast/72b7a195bb6fcb4a8f01cfaf880d0fef/34.9803,101.9188')
+   axios.get('https://api.darksky.net/forecast/72b7a195bb6fcb4a8f01cfaf880d0fef/37.8267,-122.4233')
     .then( (response) => {
 
-        let _lat = response.data.latitude;
-        let _lon = response.data.longitude;
         let _time = response.data.currently.time;
         let _temp = response.data.currently.temperature;
         let _humid = response.data.currently.humidity;
         let _wind = response.data.currently.windSpeed;
         let _visible = response.data.currently.visibility;
+        let _lat = response.data.latitude;
+        let _lon = response.data.longitude;
 
         var report = {
             time: _time,

@@ -28,7 +28,7 @@ const Places = [
     "Amarillo",
     "Canyon",
     "Lubbock",
-    "Oklahoma City",
+    "Oklahoma City"
   ];
 
 // Airports.forEach((airport) => {
