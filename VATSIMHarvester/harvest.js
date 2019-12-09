@@ -50,7 +50,7 @@ const task = cron.schedule('* /2 * * * *', () => {
     }
 );
 //MAP
-// https://image.maps.api.here.com/mia/1.6/mapview?app_id={YOUR_APP_ID}&app_code={YOUR_APP_CODE}
+// https://image.maps.api.here.com/mia/1.6/mapview?app_id={ZF9ABGlCsYXVhvhMU5RH}&app_code={hdmllY-4vQcq9j_XYGhDxg}&e=QeL4rkKaxoA&u=5m&z=8
 
 //TRAFFIC
 // const task2 = cron.schedule('* /2 * * * *', () => {
